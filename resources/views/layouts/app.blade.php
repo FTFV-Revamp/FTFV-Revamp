@@ -20,6 +20,7 @@
     {{-- css
     <link rel="stylesheet" href="{{ asset('css/login.css') }}"> --}}
     @stack('style')
+
 </head>
 <body>
     @include('layouts.header')
