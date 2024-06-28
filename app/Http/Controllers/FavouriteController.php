@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 
 class FavouriteController extends Controller
 {
-    public function list(){
+    public function favourite(){
         return view('favourite');
     }
     /**

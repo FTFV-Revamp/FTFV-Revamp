@@ -3,7 +3,7 @@
 <link rel="stylesheet" href="{{ asset('css/login.css') }}"> 
 @endpush
 @section('content')
-{{-- <style>
+<!-- <style>
     .custom-header {
         font-size: 2rem;
         font-weight: 900;
@@ -33,7 +33,7 @@
         margin-top: 10px;
         font-size: 0.9rem;
     }
-</style> --}}
+</style> -->
 <div class="container-full">
     <div>
         <div class="custom-header">{{ __('Login') }}</div>

@@ -16,13 +16,8 @@
     
     <!-- Scripts -->
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
-    <style>
-        body{
-            width: 100%;
-            display: block;
-            max-width: 1366px;
-        }
-    </style>
+        <link rel="stylesheet" href="{{ asset('css/layout.css') }}"> 
+    @stack('style')
 </head>
 <body>
     @include('layouts.header')
@@ -84,6 +79,8 @@
             @yield('content')
         </main>
     </div>
+    @include('layouts.footer')
+
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             const passwordInput = document.getElementById('password');
@@ -97,8 +94,5 @@
             });
         });
     </script>
-    
-    
-    @include('layouts.footer')
 </body>
 </html>
