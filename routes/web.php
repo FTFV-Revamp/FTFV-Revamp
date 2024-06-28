@@ -13,6 +13,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::get('/list', [App\Http\Controllers\FavouriteController::class, 'list'])->name('list');
+
 Route::get('/', function () {
     return view('welcome');
 });
