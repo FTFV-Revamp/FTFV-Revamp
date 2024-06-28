@@ -1,5 +1,8 @@
 <?php
 
+use App\Http\Controllers\Auth\VerificationController;
+use App\Http\Controllers\HomeController;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -19,6 +22,15 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Auth::routes(['verify' => true]);
+
+// Define Custom Verification Routes
+Route::controller(VerificationController::class)->group(function() {
+    Route::get('/email/verify', 'notice')->name('verification.notice');
+    Route::get('/email/verify/{id}/{hash}', 'verify')->name('verification.verify');
+    Route::post('/email/resend', 'resend')->name('verification.resend');
+});
+Route::get('/home', [HomeController::class, 'index'])
+->name('home')
+->middleware('verified');
