@@ -8,7 +8,7 @@
 @endpush
 @section('content')
 <div class="image-container">
-    <img src="{{ asset('images/home.png') }}" class="img-fluid" alt="Your Image">
+    <img src="{{ asset('images/home.png') }}" class="img-fluid full-screen-img " alt="Your Image">
     <div class="overlay">
         <h2>中国历史文化名镇名村</h2>
         <h4 class="mt-3">Chinese famous towns & villages in history & culture</h4>
@@ -249,7 +249,10 @@
         <!-- table end -->
     </div>
     <!-- content end -->
+
 </div>
+
+
 @endsection
 
 @push('scripts')
@@ -280,6 +283,8 @@
                 dataPhoto.lng
             );
 
+            //share social & embeded
+            infoContent += '<button onclick="share(' + dataPhoto.lat + ',' + dataPhoto.lng + ')">Share</button>';
 
             var marker = new google.maps.Marker({
                 position: latLng,
@@ -320,7 +325,7 @@
         initialize(); // init map
     });
 </script>
-{{-- <script>
+<script>
     // // Get the Sidebar
         // var mySidebar = document.getElementById("mySidebar");
 
@@ -347,13 +352,13 @@
         // collapse sidebar function
         /* Set the width of the sidebar to 250px and the left margin of the page content to 250px */
         function openNav() {
-        document.getElementById("mySidebar").style.width = "250px";
-        document.getElementById("main").style.marginLeft = "250px";
+            document.getElementById("mySidebar").style.width = "250px";
+            document.getElementById("main").style.marginLeft = "250px";
         }
         /* Set the width of the sidebar to 0 and the left margin of the page content to 0 */
         function closeNav() {
-        document.getElementById("mySidebar").style.width = "0";
-        document.getElementById("main").style.marginLeft = "0";
+            document.getElementById("mySidebar").style.width = "0";
+            document.getElementById("main").style.marginLeft = "0";
         }
 
         // script for the share popup
@@ -372,7 +377,13 @@
         const inputIframe = document.getElementById("inputIframe");
         const copyUrlButton = document.getElementById("copyURL");
         const copyIframeButton = document.getElementById("copyIframe");
+
         var blur = document.getElementById('blur');
+        var map = document.getElementById('map');
+        var mapRect = map.getBoundingClientRect();
+        popup.style.top = (mapRect.top + window.scrollY + mapRect.height / 2) + 'px';
+        popup.style.left = (mapRect.left + window.scrollX + mapRect.width / 2) + 'px';
+        popup.style.transform = 'translate(-50%, -50%)';
 
         var url = "";
         var latitude = "";
@@ -381,36 +392,37 @@
         var allLocation = false;
 
         function share(lat, lng) {
-        allLocation = false;
-        singleLocation = true;
-        // url = "https://www.google.com/maps/search/?api=1&query=" + lat + "%2C" + lng;
-        // url = "https://www.google.com/maps/place/" + lat + "+" + lng;
-        url = "https://www.google.com/maps/place/" + lat + "," + lng;
-        urlIframe = 'https://maps.google.com/maps?q=' + lat + ',' + lng + '&hl=es;z=14&output=embed';
-        latitude = lat;
-        longitude = lng;
+            allLocation = false;
+            singleLocation = true;
+            // url = "https://www.google.com/maps/search/?api=1&query=" + lat + "%2C" + lng;
+            // url = "https://www.google.com/maps/place/" + lat + "+" + lng;
+            url = "https://www.google.com/maps/place/" + lat + "," + lng;
+            urlIframe = 'https://maps.google.com/maps?q=' + lat + ',' + lng + '&hl=es;z=14&output=embed';
+            latitude = lat;
+            longitude = lng;
 
-        popup.classList.toggle("show");
-        blur.classList.toggle('active');
-        document.getElementById("inputURL").value = url;
-        document.getElementById("inputIframe").value = "<iframe src='" + urlIframe + "' width='400' height='300' style='border:0;' allowfullscreen='' loading='lazy' referrerpolicy='no-referrer-when-downgrade'></iframe>";
-        document.getElementById("iframe").src = urlIframe;
+            popup.classList.toggle("show");
+            blur.classList.toggle('active');
+            document.getElementById("inputURL").value = url;
+            document.getElementById("inputIframe").value = "<iframe src='" + urlIframe + "' width='400' height='300' style='border:0;' allowfullscreen='' loading='lazy' referrerpolicy='no-referrer-when-downgrade'></iframe>";
+            document.getElementById("iframe").src = urlIframe;
         }
 
         function shareWholeMap() {
-        singleLocation = false;
-        allLocation = true;
-        // url = "https://chinaetravel.com/ftfv/map.php";
-        url = "https://chinaetravel.com/china-project/ftfv/map.php";
-        popup.classList.toggle("show");
-        blur.classList.toggle('active');
-        document.getElementById("inputURL").value = url;
-        document.getElementById("inputIframe").value = "<iframe src='" + url + "' width='400' height='300' style='border:0;' allowfullscreen='' loading='lazy' referrerpolicy='no-referrer-when-downgrade'></iframe>";
-        document.getElementById("iframe").src = url;
+            singleLocation = false;
+            allLocation = true;
+            // url = "https://chinaetravel.com/ftfv/map.php";
+            url = "demo";
+
+            popup.classList.toggle("show");
+            blur.classList.toggle('active');
+            document.getElementById("inputURL").value = url;
+            document.getElementById("inputIframe").value = "<iframe src='" + url + "' width='400' height='300' style='border:0;' allowfullscreen='' loading='lazy' referrerpolicy='no-referrer-when-downgrade'></iframe>";
+            document.getElementById("iframe").src = url;
         }
 
         close.onclick = () => {
-        share();
+            share();
         }
 
         facebookIcon.onclick = () => {
@@ -472,39 +484,39 @@
             fieldIframe.classList.add("active");
             copyIframeButton.innerText = "Copied";
             setTimeout(() => {
-            fieldIframe.classList.remove("active");
-            copyIframeButton.innerText = "Copy";
-            window.getSelection().removeAllRanges();
+                fieldIframe.classList.remove("active");
+                copyIframeButton.innerText = "Copy";
+                window.getSelection().removeAllRanges();
             }, 3000); //after 3sec remove active class and change button style
         }
         }
 
         //bookmark function
-        function myBookmark(longname, baidu, latitude, longitude) {
-        var login = "<?php echo $login; ?>";
-        if (login == "true") {
-            var bookmarkList = [longname, baidu, latitude, longitude];
-            $.ajax({
-            url: 'backend/insertbookmark.php',
-            type: "POST",
-            data: {
-                'bookmarkList': bookmarkList
-            },
-            dataType: 'json',
-            success: function(data) {
-                alert(data.message);
-            }
-            });
-        } else {
-            loginBookmark();
-        }
-        }
+        // function myBookmark(longname, baidu, latitude, longitude) {
+        // var login = "";
+        // if (login == "true") {
+        //     var bookmarkList = [longname, baidu, latitude, longitude];
+        //     $.ajax({
+        //     url: 'backend/insertbookmark.php',
+        //     type: "POST",
+        //     data: {
+        //         'bookmarkList': bookmarkList
+        //     },
+        //     dataType: 'json',
+        //     success: function(data) {
+        //         alert(data.message);
+        //     }
+        //     });
+        // } else {
+        //     loginBookmark();
+        // }
+        // }
 
-        function loginBookmark() {
-        alert('Please login to access bookmark feature.');
-        window.location = "login.php";
-        }
-</script> --}}
+        // function loginBookmark() {
+        // alert('Please login to access bookmark feature.');
+        // window.location = "login.php";
+        // }
+</script>
 
 <script src="{{ asset('js/oldvillage.js') }}"></script>
 @endpush
