@@ -285,6 +285,10 @@ button {
     margin-left: 60px;
 }
 
+.popup {
+    display: none;
+}
+
 @media only screen and (max-width: 600px) {
     header {
         width: 100%;

@@ -20,11 +20,13 @@ h6 {
 /* CSS for pop up window */
 .blurbox#blur.active {
   filter: blur(3px);
-  pointer-events: none
+  pointer-events: none;
+  position: relative;
 }
 
 .popup {
   position: absolute;
+  display: block;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -238,4 +240,11 @@ header .close {
         width: 20%;
         text-transform: uppercase;
         border: none;
+    }
+
+
+    .full-screen-img {
+        max-height: 50%;
+        width: 100%;
+        object-fit: cover;
     }
