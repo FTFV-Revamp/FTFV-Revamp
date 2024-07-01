@@ -1,61 +1,61 @@
 @extends('layouts.app')
 @push('style')
-<link rel="stylesheet" href="{{ asset('css/login.css') }}"> 
+<link rel="stylesheet" href="{{ asset('css/register.css') }}"> 
 @endpush
 @section('content')
 
-<div class="container-full">
+<div class="container-register">
     <div>
-        <div class="custom-header">{{ __('Register') }}</div>
-        <p class="custom-paragraph">Please provide your details to create your account.</p>
-        <form id="loginForm" method="POST" action="{{ route('login') }}" class="mb-3">
+        <div class="register-header">{{ __('Register') }}</div>
+        <p class="register-paragraph">Please provide your details to create your account.</p>
+        <form id="registerForm" method="POST" action="{{ route('register') }}" class="mb-3">
             @csrf
             <div class="mb-3">
-                <label for="Username" class="form-label">{{ __('Username') }}</label>
-                <input type="text" class="form-control " id="Username" name="Username" placeholder="Username" required>
-                <div class="invalid-feedback">
-                    Please enter a valid username.
-                </div>
+                <label for="username" class="form-label">{{ __('Username') }}</label>
+                <input type="text" class="form-control @error('username') is-invalid @enderror" id="username" name="username" placeholder="Username" required>
+                @error('username')
+                    <div class="invalid-feedback">{{ $message }}</div>
+                @enderror
             </div>
             <div class="mb-3">
                 <label for="Email" class="form-label">{{ __('Email') }}</label>
-                <input type="email" class="form-control " id="email" name="email" placeholder="Email" required>
-                <div class="invalid-feedback">
-                    Please enter a valid username.
-                </div>
+                <input type="email" class="form-control @error('email') is-invalid @enderror" id="email" name="email" placeholder="Email" required>
+                @error('email')
+                    <div class="invalid-feedback">{{ $message }}</div>
+                @enderror
             </div>
             <div class="mb-3">
                 <label for="Phone" class="form-label">{{ __('Phone Number') }}</label>
-                <input type="number" class="form-control " id="Phone" name="Phone" placeholder="Phone Number" required>
-                <div class="invalid-feedback">
-                    Please enter a valid username.
-                </div>
+                <input type="text" class="form-control @error('phone_number') is-invalid @enderror" id="phone_number" name="phone_number" placeholder="Phone Number" required>
+                @error('phone_number')
+                    <div class="invalid-feedback">{{ $message }}</div>
+                @enderror
             </div>
             <div class="mb-3 position-relative">
                 <label for="password" class="form-label">{{ __('Password') }}</label>
                 <div class="input-group mb-3">
-                    <input type="password" class="form-control toggle-password" id="password" name="password" required>
+                    <input type="password" class="form-control toggle-password @error('password') is-invalid @enderror" id="password" name="password" placeholder="Password" required>
                     <span class="input-group-text toggle-password-icon">
                         <i class="far fa-eye"></i>
                     </span>
                 </div>
-                <div class="invalid-feedback">
-                    Please enter your password.
-                </div>
+                @error('password')
+                <div class="invalid-feedback d-block">{{ $message }}</div>
+                @enderror
             </div>
+            
+            
             <div class="mb-3 position-relative">
-                <label for="password_confirmation" class="form-label">{{ __('Password') }}</label>
+                <label for="password_confirmation" class="form-label">{{ __('Confirm Password') }}</label>
                 <div class="input-group mb-3">
-                    <input type="password" class="form-control toggle-password" id="password_confirmation" name="password_confirmation" required>
+                    <input type="password" class="form-control toggle-password" id="password_confirmation" name="password_confirmation" placeholder="Confirm Password" required>
                     <span class="input-group-text toggle-password-icon">
                         <i class="far fa-eye"></i>
                     </span>
                 </div>
-                <div class="invalid-feedback">
-                    Please enter your password.
-                </div>
+            </div>  
             <div class="mb-3">
-                <button type="submit" class="btn btn-custom">{{ __('Register') }}</button>
+                <button type="submit" class="btn btn-register">{{ __('Register') }}</button>
             </div>
         </form>
         <div>Don’t have an account?<a href="{{ route('login') }}" class="text-decoration-none"> Login</a> </div>
