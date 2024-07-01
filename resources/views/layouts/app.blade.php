@@ -85,16 +85,19 @@
     </div>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            const passwordInput = document.getElementById('password');
-            const togglePasswordIcon = document.querySelector('.toggle-password-icon');
-    
-            togglePasswordIcon.addEventListener('click', function() {
-                const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
-                passwordInput.setAttribute('type', type);
-                this.querySelector('i').classList.toggle('fa-eye');
-                this.querySelector('i').classList.toggle('fa-eye-slash');
+            const togglePasswordIcons = document.querySelectorAll('.toggle-password-icon');
+
+            togglePasswordIcons.forEach(togglePasswordIcon => {
+                togglePasswordIcon.addEventListener('click', function() {
+                    const input = this.previousElementSibling;
+                    const type = input.getAttribute('type') === 'password' ? 'text' : 'password';
+                    input.setAttribute('type', type);
+                    this.querySelector('i').classList.toggle('fa-eye');
+                    this.querySelector('i').classList.toggle('fa-eye-slash');
+                });
             });
         });
+
     </script>
     
     
