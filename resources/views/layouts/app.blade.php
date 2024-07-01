@@ -28,13 +28,51 @@
     @stack('style')
 </head>
 <body>
-    @include('layouts.header')
-    <div id="app">
-        <main class="py-4">
+    <div id="blur" class="blurbox">
+        @include('layouts.header')
+        <main class="py">
             @yield('content')
         </main>
+        @include('layouts.footer')
+
     </div>
 
+                      <!-- popup window start -->
+                      <div class="popup">
+                        <header>
+                          <span>Share the location</span>
+                          <div class="close"><i class="uil uil-times"></i></div>
+                        </header>
+                        <div class="tabs">
+                          <input type="radio" class="tabs_radio" name="tabs-example" id="tab1" checked>
+                          <label for="tab1" class="tabs_label">Share link</label>
+                          <div class="tabs_content">
+                            <p>Share this location link via</p>
+                            <ul class="icons">
+                              <a href="#" class="facebook" data-href="https://developers.facebook.com/docs/plugins/"><i class="fab fa-facebook-f"></i></a>
+                              <a href="#" class="whatsapp"><i class="fab fa-whatsapp"></i></a>
+                              <a href="#" class="instagram"><i class="fab fa-instagram"></i></a>
+                            </ul>
+                            <p>Or copy link</p>
+                            <div id="fieldURL" class="field">
+                              <i class="uil uil-link"></i>
+                              <input id="inputURL" type="text" value="">
+                              <button id="copyURL">Copy</button>
+                            </div>
+                          </div>
+                          <input type="radio" class="tabs_radio" name="tabs-example" id="tab2">
+                          <label for="tab2" class="tabs_label">Embed map</label>
+                          <div class="tabs_content">
+                            <div id="fieldIframe" class="field mb-3">
+                              <!-- <input type="text" value="example.com/share-link"> -->
+                              <input id="inputIframe" type="text" value="">
+                              <button id="copyIframe">Copy</button>
+                            </div>
+                            <iframe id="iframe" src="" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                          </div>
+                        </div>
+                      </div>
+                      <!-- popup window end -->
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             const passwordInput = document.getElementById('password');
@@ -46,6 +84,8 @@
                 this.querySelector('i').classList.toggle('fa-eye');
                 this.querySelector('i').classList.toggle('fa-eye-slash');
             });
+
+
         });
     </script>
 
@@ -60,6 +100,8 @@
 
     @stack('scripts')
 
-    @include('layouts.footer')
+
+
+
 </body>
 </html>
