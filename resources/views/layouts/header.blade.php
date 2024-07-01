@@ -13,8 +13,22 @@
                 <li><a href="">About</a></li>
                 <li><a href="{{route('favourite')}}">Bookmark</a></li>
                 <li><a href="">Contact</a></li>
-                <li><a href="{{route('login')}}">Login</a></li>
-                <li><a href="{{route('register')}}">Register</a></li>
+                
+                @if(!empty(Auth::user()->id))
+                    <li><a href="{{ route('logout') }}"
+                        onclick="event.preventDefault();
+                                        document.getElementById('logout-form').submit();">
+                        {{ __('Logout') }}
+                    </a></li>
+
+                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                        @csrf
+                    </form>
+
+                @else
+                    <li><a href="{{route('login')}}">Login</a></li>
+                    <li><a href="{{route('register')}}">Register</a></li>
+                @endif
             </ul>
             <span class="close-menu2"><a href="">FTFV</a></span>
 
@@ -30,9 +44,22 @@
         </div>
         <div class="three">
             <ul class="auth-menu">
-                <li><a href="{{route('login')}}">Login</a></li>
-                <li class="vertical-line"></li>
-                <li><a href="{{route('register')}}">Register</a></li>
+                @if(!empty(Auth::user()->id))
+                    <li><a href="{{ route('logout') }}"
+                        onclick="event.preventDefault();
+                                        document.getElementById('logout-form').submit();">
+                        {{ __('Logout') }}
+                    </a></li>
+
+                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                        @csrf
+                    </form>
+
+                @else
+                    <li><a href="{{route('login')}}">Login</a></li>
+                    <li class="vertical-line"></li>
+                    <li><a href="{{route('register')}}">Register</a></li>
+                @endif
             </ul>
         </div>
     </div>
