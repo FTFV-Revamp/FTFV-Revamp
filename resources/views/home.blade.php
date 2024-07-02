@@ -491,7 +491,7 @@
         }
         }
 
-        //bookmark function
+        // bookmark function
         // function myBookmark(longname, baidu, latitude, longitude) {
         // var login = "";
         // if (login == "true") {
