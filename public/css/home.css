@@ -45,22 +45,22 @@ h6 {
 
 }
 
-.popup :is(header, .icons, .field) {
+.popup :is(.header, .icons, .field) {
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
-.popup header {
+.popup .header {
   padding-bottom: 5px;
 }
 
-header span {
+.header span {
   font-size: 21px;
   font-weight: 600;
 }
 
-header .close,
+.header .close,
 .icons a {
   display: flex;
   font-size: 20px;
@@ -70,7 +70,7 @@ header .close,
   cursor: pointer;
 }
 
-header .close {
+.header .close {
   color: #878787;
   height: 33px;
   width: 33px;
@@ -209,6 +209,7 @@ header .close {
 
 .image-container {
         position: relative;
+        max-width: 100%; /* Ensure the container does not overflow */
     }
     .overlay {
         padding: 25px;
@@ -216,9 +217,11 @@ header .close {
         position: absolute;
         top: 20%;
         left: 5%;
-        width: 30%;
-        height: 30%;
-        border-radius: 1%
+        width: 90%; /* Adjust to be more flexible */
+        max-width: 30%;
+        height: auto; /* Let height adjust automatically */
+        border-radius: 1%;
+        box-sizing: border-box;
     }
 
     .overlay h2 {
@@ -230,6 +233,10 @@ header .close {
     .overlay .btn-readmore {
         background-color: #D9A283;
         color: white;
+        border: none;
+        padding: 10px 20px;
+        text-transform: uppercase;
+        cursor: pointer;
     }
 
     .shareBtn {
@@ -248,3 +255,62 @@ header .close {
         width: 100%;
         object-fit: cover;
     }
+
+
+    /* Responsive adjustments */
+@media (max-width: 1200px) {
+    .overlay {
+        top: 15%;
+        left: 5%;
+        width: 40%;
+        max-width: none;
+    }
+}
+
+@media (max-width: 992px) {
+    .overlay {
+        top: 10%;
+        left: 5%;
+        width: 50%;
+        max-width: none;
+    }
+}
+
+@media (max-width: 768px) {
+    .overlay {
+        top: 5%;
+        left: 5%;
+        width: 60%;
+        max-width: none;
+    }
+}
+
+@media (max-width: 576px) {
+    .overlay {
+        top: 5%;
+        left: 5%;
+        width: 80%;
+        max-width: none;
+    }
+}
+
+@media (max-width: 480px) {
+    .overlay {
+        top: 5%;
+        left: 2.5%;
+        width: 95%;
+        padding: 15px; /* Reduce padding for smaller screens */
+    }
+
+    .overlay h2 {
+        font-size: 1.5em; /* Adjust font size for smaller screens */
+    }
+
+    .overlay p {
+        font-size: 1em; /* Adjust font size for smaller screens */
+    }
+
+    .overlay .btn-readmore {
+        padding: 8px 16px; /* Adjust button padding for smaller screens */
+    }
+}
