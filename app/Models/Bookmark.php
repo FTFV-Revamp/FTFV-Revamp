@@ -8,4 +8,15 @@ use Illuminate\Database\Eloquent\Model;
 class Bookmark extends Model
 {
     use HasFactory;
+    protected $table = 'bookmarks';
+    protected $fillable = [
+        'user_id',
+        'location_id',
+        'created_at',
+    ];
+    public $timestamps = true;
+    public function location()
+    {
+        return $this->belongsTo(Location::class, 'location_id');
+    }
 }

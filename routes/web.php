@@ -38,8 +38,10 @@ Route::get('/', [HomeController::class, 'index'])
 // ->middleware('verified');
 
 //bookmark
+Route::post('/bookmarks', [FavouriteController::class, 'store'])->name('store');
 Route::get('/favourite', [FavouriteController::class, 'favourite'])->name('favourite');
 Route::delete('/favourite/{id}', [FavouriteController::class, 'destroy'])->name('favourite.destroy');
+
 
 Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
 
