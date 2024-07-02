@@ -161,6 +161,14 @@ body {
     font-weight: bold;
     margin-right: 25%;
 }
+.vertical-line {
+    display: inline-block;
+    width: 1px;
+    height: 20px;
+    background-color:white;
+    margin: 0 5px;
+    vertical-align: middle;
+}
 footer{
     background-color: #FFFFFF;
 }
