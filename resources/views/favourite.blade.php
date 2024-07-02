@@ -36,8 +36,46 @@
                     <p>This is a description of the favourite item. It provides more details about why this item is on the list.</p>
                 </div>
             </div>
+             <!-- @if(!empty($favourites))
+                @foreach ($favourites as $favourite)
+                    <div class="favourite-item">
+                        <img src="{{ $favourite->image_url }}" alt="Favourite Image">
+                        <button class="icon-bookmark" onclick="deleteFavourite({{ $favourite->id }})">
+                            <i class="bi bi-bookmark-fill"></i>
+                        </button>
+                        <div class="favourite-item-content">
+                            <h2>{{ $favourite->name }}</h2>
+                            <p>{{ $favourite->description }}</p>
+                        </div>
+                    </div>
+                @endforeach 
+            @endif-->
+        </div>
+        <div class="pagination">
+            
         </div>
     </div>
+
+    <script>
+        function deleteFavourite(id) {
+            if (confirm('Are you sure you want to delete this favourite?')) {
+                fetch(`/favourite/${id}`, {
+                    method: 'DELETE',
+                    headers: {
+                        'X-CSRF-TOKEN': '{{ csrf_token() }}',
+                        'Content-Type': 'application/json'
+                    }
+                }).then(response => response.json())
+                  .then(data => {
+                      if (data.message === 'Favourite deleted successfully.') {
+                          location.reload();
+                      } else {
+                          alert('Failed to delete favourite.');
+                      }
+                  });
+            }
+        }
+    </script>
 @endsection
 
 

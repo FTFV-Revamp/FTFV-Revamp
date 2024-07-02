@@ -4,6 +4,8 @@ use App\Http\Controllers\Auth\VerificationController;
 use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\FavouriteController;
+use App\Http\Controllers\Auth\LoginController;
 
 /*
 |--------------------------------------------------------------------------
@@ -34,3 +36,9 @@ Route::controller(VerificationController::class)->group(function() {
 Route::get('/home', [HomeController::class, 'index'])
 ->name('home')
 ->middleware('verified');
+
+//bookmark
+Route::get('/favourite', [FavouriteController::class, 'favourite'])->name('favourite');
+Route::delete('/favourite/{id}', [FavouriteController::class, 'destroy'])->name('favourite.destroy');
+
+Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
