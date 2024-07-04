@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Auth\VerificationController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\VillageController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\FavouriteController;
@@ -43,8 +44,10 @@ Route::get('/favourite', [FavouriteController::class, 'favourite'])->name('favou
 Route::delete('/favourite/{id}', [FavouriteController::class, 'destroy'])->name('favourite.destroy');
 
 
+Route::get('villages/{province_id}', [VillageController::class, 'index'])->name('villages.index');
+
 Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
 
 
-Route::get('/villages/{province_id}', fn() => 1)->name('villages.index');
+
 Route::get('/towns/{province_id}', fn() => 1)->name('towns.index');
