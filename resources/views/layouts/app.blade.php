@@ -44,10 +44,10 @@
 
                       <!-- popup window start -->
                       <div class="popup">
-                        <header>
+                        <div class="header">
                           <span>Share the location</span>
                           <div class="close"><i class="uil uil-times"></i></div>
-                        </header>
+                        </div>
                         <div class="tabs">
                           <input type="radio" class="tabs_radio" name="tabs-example" id="tab1" checked>
                           <label for="tab1" class="tabs_label">Share link</label>

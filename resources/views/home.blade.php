@@ -52,198 +52,200 @@
                         <th>合计</th>
                     </tr>
                 </thead>
+                <tbody>
                 <tr>
                     <td width="153" valign="top">山西省</a></td>
-                    <td width="153" valign="top"><a href=" {{ route('villages.index', ['province_id' => 140000]) }}">96</a></td>
-                    <td width="153" valign="top"><a href="alltownpro.php?proid=140000">15</td>
+                    <td width="153" valign="top"><a href="{{ route('villages.index', ['province_id' => 140000]) }}">96</a></td>
+                    <td width="153" valign="top"><a href="{{ route('towns.index', ['province_id' => 140000]) }}">15</td>
                     <td width="153" valign="top">111</td>
                 </tr>
                 <tr>
                     <td width="153" valign="top">福建省</td>
-                    <td width="153" valign="top"><a href="allvillpro.php?proid=350000">57</a></td>
-                    <td width="153" valign="top"><a href="alltownpro.php?proid=350000">19</a></td>
+                    <td width="153" valign="top"><a href="{{ route('villages.index', ['province_id' => 350000]) }}">57</a></td>
+                    <td width="153" valign="top"><a href="{{ route('towns.index', ['province_id' => 350000]) }}">19</a></td>
                     <td width="153" valign="top">76</td>
                 </tr>
                 <tr>
                     <td width="153" valign="top">浙江省</td>
-                    <td width="153" valign="top"><a href="allvillpro.php?proid=330000">44</a></td>
-                    <td width="153" valign="top"><a href="alltownpro.php?proid=330000">27</a></td>
+                    <td width="153" valign="top"><a href="{{ route('villages.index', ['province_id' => 330000]) }}">44</a></td>
+                    <td width="153" valign="top"><a href="{{ route('towns.index', ['province_id' => 330000]) }}">27</a></td>
                     <td width="153" valign="top">71</td>
                 </tr>
                 <tr>
                     <td width="153" valign="top">江西省</td>
-                    <td width="153" valign="top"><a href="allvillpro.php?proid=360000">37</a></td>
-                    <td width="153" valign="top"><a href="alltownpro.php?proid=360000">13</a></td>
+                    <td width="153" valign="top"><a href="{{ route('villages.index', ['province_id' => 360000]) }}">37</a></td>
+                    <td width="153" valign="top"><a href="{{ route('towns.index', ['province_id' => 360000]) }}">13</a></td>
                     <td width="153" valign="top">50</td>
                 </tr>
                 <tr>
                     <td width="153" valign="top">江苏省</td>
-                    <td width="153" valign="top"><a href="allvillpro.php?proid=320000">12</a></td>
-                    <td width="153" valign="top"><a href="alltownpro.php?proid=320000">31</a></td>
+                    <td width="153" valign="top"><a href="{{ route('villages.index', ['province_id' => 320000]) }}">12</a></td>
+                    <td width="153" valign="top"><a href="{{ route('towns.index', ['province_id' => 320000]) }}">31</a></td>
                     <td width="153" valign="top">43</td>
                 </tr>
                 <tr>
                     <td width="153" valign="top">广东省</td>
-                    <td width="153" valign="top"><a href="allvillpro.php?proid=440000">25</a></td>
-                    <td width="153" valign="top"><a href="alltownpro.php?proid=440000">15</a></td>
+                    <td width="153" valign="top"><a href="{{ route('villages.index', ['province_id' => 440000]) }}">25</a></td>
+                    <td width="153" valign="top"><a href="{{ route('towns.index', ['province_id' => 440000]) }}">15</a></td>
                     <td width="153" valign="top">40</td>
                 </tr>
                 <tr>
                     <td width="153" valign="top">河北省</td>
-                    <td width="153" valign="top"><a href="allvillpro.php?proid=130000">32</a></td>
-                    <td width="153" valign="top"><a href="alltownpro.php?proid=130000">8</a></td>
+                    <td width="153" valign="top"><a href="{{ route('villages.index', ['province_id' => 130000]) }}">32</a></td>
+                    <td width="153" valign="top"><a href="{{ route('towns.index', ['province_id' => 130000]) }}">8</a></td>
                     <td width="153" valign="top">40</td>
                 </tr>
                 <tr>
                     <td width="153" valign="top">广西壮族自治区</td>
-                    <td width="153" valign="top"><a href="allvillpro.php?proid=450000">29</a></td>
-                    <td width="153" valign="top"><a href="alltownpro.php?proid=450000">9</a></td>
+                    <td width="153" valign="top"><a href="{{ route('villages.index', ['province_id' => 450000]) }}">29</a></td>
+                    <td width="153" valign="top"><a href="{{ route('towns.index', ['province_id' => 450000]) }}">9</a></td>
                     <td width="153" valign="top">38</td>
                 </tr>
                 <tr>
                     <td width="153" valign="top">四川省</td>
-                    <td width="153" valign="top"><a href="allvillpro.php?proid=510000">6</a></td>
-                    <td width="153" valign="top"><a href="alltownpro.php?proid=510000">31</a></td>
+                    <td width="153" valign="top"><a href="{{ route('villages.index', ['province_id' => 510000]) }}">6</a></td>
+                    <td width="153" valign="top"><a href="{{ route('towns.index', ['province_id' => 510000]) }}">31</a></td>
                     <td width="153" valign="top">37</td>
                 </tr>
                 <tr>
                     <td width="153" valign="top">湖南省</td>
-                    <td width="153" valign="top"><a href="allvillpro.php?proid=430000">25</a></td>
-                    <td width="153" valign="top"><a href="alltownpro.php?proid=430000">10</a></td>
+                    <td width="153" valign="top"><a href="{{ route('villages.index', ['province_id' => 430000]) }}">25</a></td>
+                    <td width="153" valign="top"><a href="{{ route('towns.index', ['province_id' => 430000]) }}">10</a></td>
                     <td width="153" valign="top">35</td>
                 </tr>
                 <tr>
                     <td width="153" valign="top">安徽省</td>
-                    <td width="153" valign="top"><a href="allvillpro.php?proid=340000">24</a></td>
-                    <td width="153" valign="top"><a href="alltownpro.php?proid=340000">11</a></td>
+                    <td width="153" valign="top"><a href="{{ route('villages.index', ['province_id' => 340000]) }}">24</a></td>
+                    <td width="153" valign="top"><a href="{{ route('towns.index', ['province_id' => 340000]) }}">11</a></td>
                     <td width="153" valign="top">35</td>
                 </tr>
                 <tr>
                     <td width="153" valign="top">湖北省</td>
-                    <td width="153" valign="top"><a href="allvillpro.php?proid=420000">15</a></td>
-                    <td width="153" valign="top"><a href="alltownpro.php?proid=420000">13</a></td>
+                    <td width="153" valign="top"><a href="{{ route('villages.index', ['province_id' => 420000]) }}">15</a></td>
+                    <td width="153" valign="top"><a href="{{ route('towns.index', ['province_id' => 420000]) }}">13</a></td>
                     <td width="153" valign="top">28</td>
                 </tr>
                 <tr>
                     <td width="153" valign="top">重庆市</td>
-                    <td width="153" valign="top"><a href="allvillpro.php?proid=500000">1</a></td>
-                    <td width="153" valign="top"><a href="alltownpro.php?proid=500000">23</a></td>
+                    <td width="153" valign="top"><a href="{{ route('villages.index', ['province_id' => 500000]) }}">1</a></td>
+                    <td width="153" valign="top"><a href="{{ route('towns.index', ['province_id' => 500000]) }}">23</a></td>
                     <td width="153" valign="top">24</td>
                 </tr>
                 <tr>
                     <td width="153" valign="top">贵州省</td>
-                    <td width="153" valign="top"><a href="allvillpro.php?proid=520000">16</a></td>
-                    <td width="153" valign="top"><a href="alltownpro.php?proid=520000">8</a></td>
+                    <td width="153" valign="top"><a href="{{ route('villages.index', ['province_id' => 520000]) }}">16</a></td>
+                    <td width="153" valign="top"><a href="{{ route('towns.index', ['province_id' => 520000]) }}">8</a></td>
                     <td width="153" valign="top">24</td>
                 </tr>
                 <tr>
                     <td width="153" valign="top">云南省</td>
-                    <td width="153" valign="top"><a href="allvillpro.php?proid=530000">11</a></td>
-                    <td width="153" valign="top"><a href="alltownpro.php?proid=530000">11</a></td>
+                    <td width="153" valign="top"><a href="{{ route('villages.index', ['province_id' => 530000]) }}">11</a></td>
+                    <td width="153" valign="top"><a href="{{ route('towns.index', ['province_id' => 530000]) }}">11</a></td>
                     <td width="153" valign="top">22</td>
                 </tr>
                 <tr>
                     <td width="153" valign="top">河南省</td>
-                    <td width="153" valign="top"><a href="allvillpro.php?proid=410000">9</a></td>
-                    <td width="153" valign="top"><a href="alltownpro.php?proid=410000">10</a></td>
+                    <td width="153" valign="top"><a href="{{ route('villages.index', ['province_id' => 410000]) }}">9</a></td>
+                    <td width="153" valign="top"><a href="{{ route('towns.index', ['province_id' => 410000]) }}">10</a></td>
                     <td width="153" valign="top">19</td>
                 </tr>
                 <tr>
                     <td width="153" valign="top">山东省</td>
-                    <td width="153" valign="top"><a href="allvillpro.php?proid=370000">11</a></td>
-                    <td width="153" valign="top"><a href="alltownpro.php?proid=370000">4</a></td>
+                    <td width="153" valign="top"><a href="{{ route('villages.index', ['province_id' => 370000]) }}">11</a></td>
+                    <td width="153" valign="top"><a href="{{ route('towns.index', ['province_id' => 370000]) }}">4</a></td>
                     <td width="153" valign="top">15</td>
                 </tr>
                 <tr>
                     <td width="153" valign="top">上海市</td>
-                    <td width="153" valign="top"><a href="allvillpro.php?proid=310000">2</a></td>
-                    <td width="153" valign="top"><a href="alltownpro.php?proid=310000">11</a></td>
+                    <td width="153" valign="top"><a href="{{ route('villages.index', ['province_id' => 310000]) }}">2</a></td>
+                    <td width="153" valign="top"><a href="{{ route('towns.index', ['province_id' => 310000]) }}">11</a></td>
                     <td width="153" valign="top">13</td>
                 </tr>
                 <tr>
                     <td width="153" valign="top">甘肃省</td>
-                    <td width="153" valign="top"><a href="allvillpro.php?proid=620000">5</a></td>
-                    <td width="153" valign="top"><a href="alltownpro.php?proid=620000">8</a></td>
+                    <td width="153" valign="top"><a href="{{ route('villages.index', ['province_id' => 620000]) }}">5</a></td>
+                    <td width="153" valign="top"><a href="{{ route('towns.index', ['province_id' => 620000]) }}">8</a></td>
                     <td width="153" valign="top">13</td>
                 </tr>
                 <tr>
                     <td width="153" valign="top">陕西省</td>
-                    <td width="153" valign="top"><a href="allvillpro.php?proid=610000">3</a></td>
-                    <td width="153" valign="top"><a href="alltownpro.php?proid=610000">7</a></td>
+                    <td width="153" valign="top"><a href="{{ route('villages.index', ['province_id' => 610000]) }}">3</a></td>
+                    <td width="153" valign="top"><a href="{{ route('towns.index', ['province_id' => 610000]) }}">7</a></td>
                     <td width="153" valign="top">10</td>
                 </tr>
                 <tr>
                     <td width="153" valign="top">西藏自治区</td>
-                    <td width="153" valign="top"><a href="allvillpro.php?proid=540000">4</a></td>
-                    <td width="153" valign="top"><a href="alltownpro.php?proid=540000">5</a></td>
+                    <td width="153" valign="top"><a href="{{ route('villages.index', ['province_id' => 540000]) }}">4</a></td>
+                    <td width="153" valign="top"><a href="{{ route('towns.index', ['province_id' => 540000]) }}">5</a></td>
                     <td width="153" valign="top">9</td>
                 </tr>
                 <tr>
                     <td width="153" valign="top">新疆维吾尔自治区</td>
-                    <td width="153" valign="top"><a href="allvillpro.php?proid=650000">4</a></td>
-                    <td width="153" valign="top"><a href="alltownpro.php?proid=650000">3</a></td>
+                    <td width="153" valign="top"><a href="{{ route('villages.index', ['province_id' => 650000]) }}">4</a></td>
+                    <td width="153" valign="top"><a href="{{ route('towns.index', ['province_id' => 650000]) }}">3</a></td>
                     <td width="153" valign="top">7</td>
                 </tr>
                 <tr>
                     <td width="153" valign="top">海南省</td>
-                    <td width="153" valign="top"><a href="allvillpro.php?proid=460000">3</a></td>
-                    <td width="153" valign="top"><a href="alltownpro.php?proid=460000">4</a></td>
+                    <td width="153" valign="top"><a href="{{ route('villages.index', ['province_id' => 460000]) }}">3</a></td>
+                    <td width="153" valign="top"><a href="{{ route('towns.index', ['province_id' => 460000]) }}">4</a></td>
                     <td width="153" valign="top">7</td>
                 </tr>
                 <tr>
                     <td width="153" valign="top">内蒙古自治区</td>
-                    <td width="153" valign="top"><a href="allvillpro.php?proid=150000">2</a></td>
-                    <td width="153" valign="top"><a href="alltownpro.php?proid=150000">5</a></td>
+                    <td width="153" valign="top"><a href="{{ route('villages.index', ['province_id' => 150000]) }}">2</a></td>
+                    <td width="153" valign="top"><a href="{{ route('towns.index', ['province_id' => 150000]) }}">5</a></td>
                     <td width="153" valign="top">7</td>
                 </tr>
                 <tr>
                     <td width="153" valign="top">北京市</td>
-                    <td width="153" valign="top"><a href="allvillpro.php?proid=110000">5</a></td>
-                    <td width="153" valign="top"><a href="alltownpro.php?proid=110000">1</a></td>
+                    <td width="153" valign="top"><a href="{{ route('villages.index', ['province_id' => 110000]) }}">5</a></td>
+                    <td width="153" valign="top"><a href="{{ route('towns.index', ['province_id' => 110000]) }}">1</a></td>
                     <td width="153" valign="top">6</td>
                 </tr>
                 <tr>
                     <td width="153" valign="top">青海省</td>
-                    <td width="153" valign="top"><a href="allvillpro.php?proid=630000">5</a></td>
-                    <td width="153" valign="top"><a href="alltownpro.php?proid=630000">1</a></td>
+                    <td width="153" valign="top"><a href="{{ route('villages.index', ['province_id' => 630000]) }}">5</a></td>
+                    <td width="153" valign="top"><a href="{{ route('towns.index', ['province_id' => 630000]) }}">1</a></td>
                     <td width="153" valign="top">6</td>
                 </tr>
                 <tr>
                     <td width="153" valign="top">辽宁省</td>
-                    <td width="153" valign="top"><a href="allvillpro.php?proid=210000">1</a></td>
-                    <td width="153" valign="top"><a href="alltownpro.php?proid=210000">4</a></td>
+                    <td width="153" valign="top"><a href="{{ route('villages.index', ['province_id' => 210000]) }}">1</a></td>
+                    <td width="153" valign="top"><a href="{{ route('towns.index', ['province_id' => 210000]) }}">4</a></td>
                     <td width="153" valign="top">5</td>
                 </tr>
                 <tr>
                     <td width="153" valign="top">吉林省</td>
-                    <td width="153" valign="top"><a href="allvillpro.php?proid=220000">1</a></td>
-                    <td width="153" valign="top"><a href="alltownpro.php?proid=220000">2</a></td>
+                    <td width="153" valign="top"><a href="{{ route('villages.index', ['province_id' => 220000]) }}">1</a></td>
+                    <td width="153" valign="top"><a href="{{ route('towns.index', ['province_id' => 220000]) }}">2</a></td>
                     <td width="153" valign="top">3</td>
                 </tr>
                 <tr>
                     <td width="153" valign="top">天津市</td>
-                    <td width="153" valign="top"><a href="allvillpro.php?proid=120000">1</a></td>
-                    <td width="153" valign="top"><a href="alltownpro.php?proid=120000">1</a></td>
+                    <td width="153" valign="top"><a href="{{ route('villages.index', ['province_id' => 120000]) }}">1</a></td>
+                    <td width="153" valign="top"><a href="{{ route('towns.index', ['province_id' => 120000]) }}">1</a></td>
                     <td width="153" valign="top">2</td>
                 </tr>
                 <tr>
                     <td width="153" valign="top">黑龙江省</td>
                     <td width="153" valign="top"></td>
-                    <td width="153" valign="top"><a href="alltownpro.php?proid=230000">2</a></td>
+                    <td width="153" valign="top"><a href="{{ route('towns.index', ['province_id' => 230000]) }}">2</a></td>
                     <td width="153" valign="top">2</td>
                 </tr>
                 <tr>
                     <td width="153" valign="top">宁夏回族自治区</td>
-                    <td width="153" valign="top"><a href="allvillpro.php?proid=640000">1</a></td>
+                    <td width="153" valign="top"><a href="{{ route('villages.index', ['province_id' => 640000]) }}">1</a></td>
                     <td width="153" valign="top"></td>
                     <td width="153" valign="top">1</a></td>
                 </tr>
-                <tr>
-                    <td width="152" valign="top" colspan="1" rowspan="1">合计</td>
-                    <td width="152" valign="top" rowspan="1">487</td>
-                    <td width="152" valign="top" rowspan="1">312</td>
-                    <td width="152" valign="top" rowspan="1">799</td>
-                </tr>
+                    <tr>
+                        <td width="152" valign="top" colspan="1" rowspan="1">合计</td>
+                        <td width="152" valign="top" rowspan="1">487</td>
+                        <td width="152" valign="top" rowspan="1">312</td>
+                        <td width="152" valign="top" rowspan="1">799</td>
+                    </tr>
+                </tbody>
             </table>
         </div>
         <!-- table end -->
@@ -491,7 +493,7 @@
         }
         }
 
-        //bookmark function
+        // bookmark function
         // function myBookmark(longname, baidu, latitude, longitude) {
         // var login = "";
         // if (login == "true") {

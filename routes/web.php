@@ -21,9 +21,9 @@ use App\Http\Controllers\Auth\LoginController;
 
 
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 
 
 Auth::routes(['verify' => true]);
@@ -34,14 +34,20 @@ Route::controller(VerificationController::class)->group(function() {
     Route::get('/email/verify/{id}/{hash}', 'verify')->name('verification.verify');
     Route::post('/email/resend', 'resend')->name('verification.resend');
 });
-Route::get('/home', [HomeController::class, 'index'])
-->name('home')
-->middleware('verified');
+Route::get('/', [HomeController::class, 'index'])
+->name('home');
+// ->middleware('verified');
 
 //bookmark
+Route::post('/bookmarks', [FavouriteController::class, 'store'])->name('store');
 Route::get('/favourite', [FavouriteController::class, 'favourite'])->name('favourite');
 Route::delete('/favourite/{id}', [FavouriteController::class, 'destroy'])->name('favourite.destroy');
+
 
 Route::get('villages/{province_id}', [VillageController::class, 'index'])->name('villages.index');
 
 Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
+
+
+
+Route::get('/towns/{province_id}', fn() => 1)->name('towns.index');
