@@ -37,11 +37,12 @@ Route::controller(VerificationController::class)->group(function() {
 Route::get('/', [HomeController::class, 'index'])
 ->name('home');
 // ->middleware('verified');
-
+Route::get('/locations', [HomeController::class, 'loadMap'])->name('locations');
 //bookmark
 Route::post('/bookmarks', [FavouriteController::class, 'store'])->name('store');
 Route::get('/favourite', [FavouriteController::class, 'favourite'])->name('favourite');
 Route::delete('/favourite/{id}', [FavouriteController::class, 'destroy'])->name('favourite.destroy');
+Route::post('/favourite/store', [FavouriteController::class, 'store'])->name('favourite.store');
 
 
 Route::get('villages/{province_id}', [VillageController::class, 'index'])->name('villages.index');
