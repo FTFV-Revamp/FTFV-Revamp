@@ -12,6 +12,16 @@ class VillageController extends Controller
         $province_id = $request->province_id;
         $villages = OldVillage::where ('province_id', $province_id)->get();
 
-        return view('villages.index', compact('villages'));
+        return view('villages.index', compact('villages', 'province_id'));
+    }
+
+    public function detail(Request $request)
+    {
+        $province_id = $request->province_id;
+        $id = $request->id;
+
+        $village = OldVillage::where('province_id', $province_id)->where('id', $id)->first();
+
+        return view('villages.detail', compact('village'));
     }
 }

@@ -45,6 +45,7 @@ Route::delete('/favourite/{id}', [FavouriteController::class, 'destroy'])->name(
 
 
 Route::get('villages/{province_id}', [VillageController::class, 'index'])->name('villages.index');
+Route::get('villages/{province_id}/oldvillages/{id}', [VillageController::class, 'detail'])->name('villages.detail');
 
 Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
 

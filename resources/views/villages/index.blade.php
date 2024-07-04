@@ -3,7 +3,7 @@
 @section('content')
 <div class="container mt-4">
     <div class="d-flex justify-content-start mb-3">
-        <a href="{{ url()->previous() }}" class="btn btn-secondary">
+        <a href="{{ route('home') }}" class="btn btn-secondary">
             <i class="fas fa-backward"></i> Back
         </a>
     </div>
@@ -19,7 +19,7 @@
                     <tbody>
                         @foreach ($villages as $village)
                             <tr>
-                                <td>{{ $village->longname }}</td>
+                                <td><a href="{{ route('villages.detail', ['province_id' => $province_id, 'id' => $village->id]) }}">{{ $village->longname }}</a></td>
                                 <td><a href="{{ $village->baidu }}" target="_blank">Baidu</a></td>
                             </tr>
                         @endforeach
