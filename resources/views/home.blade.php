@@ -262,6 +262,12 @@
 <script type="text/javascript">
     //Code to load the map with center point of Monterey MA
     function initialize() {
+
+$.ajax({
+    method: "GET",
+    url: "{{ route('locations') }}",
+    // dataType: "json",
+    success: function (response) {
         var center = new google.maps.LatLng(40.001517, 115.652531);
 
         var map = new google.maps.Map(document.getElementById("map"), {
@@ -273,20 +279,25 @@
         var imagePath = "https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m";
 
         var markers = [];
-        for (var i = 0; i < 487; i++) {
-            var dataPhoto = data.photos[i];
+
+        let locations = (response.locations);
+        // console.log(locations);
+        for (var i = 0; i < locations.length; i++) {
+            var dataPhoto = locations[i];
 
             //add all info into infocontent and display in infoWindow
             var infoContent = '<strong>' + dataPhoto.longname + '</strong>';
             infoContent += '<p>' + '<a href="' + dataPhoto.baidu + '" target="_blank">' + dataPhoto.baidu + '</a>' + '</p>';
 
             var latLng = new google.maps.LatLng(
-                dataPhoto.lat,
-                dataPhoto.lng
+                dataPhoto.latitude,
+                dataPhoto.longitude
             );
+            //bookmark
+            infoContent += `<button id = "bookmark" name="bookmark" class="icon" style="background-color:white; border-color:white;" onclick="myBookmark(\'${dataPhoto.id}\')"><i class="fas fa-bookmark"></i><span class="tooltiptext"></span></button></span></p>`;
 
             //share social & embeded
-            infoContent += '<button onclick="share(' + dataPhoto.lat + ',' + dataPhoto.lng + ')">Share</button>';
+            infoContent += '<button onclick="share(' + dataPhoto.latitude + ',' + dataPhoto.longitude + ')">Share</button>';
 
             var marker = new google.maps.Marker({
                 position: latLng,
@@ -298,11 +309,10 @@
             var marker = new google.maps.Marker({
                 position: latLng,
                 map: map,
-
             });
 
             /*if(props.iconImage){
-              marker.setIcon(props.iconImage);
+            marker.setIcon(props.iconImage);
             } */
 
             //Check content
@@ -316,10 +326,14 @@
             }
             return marker;
         }
+
         var markerCluster = new MarkerClusterer(map, markers, {
             imagePath: imagePath
         });
-    }
+            }
+        });
+
+}
     google.maps.event.addDomListener(window, "load", initialize);
 </script>
 <script type="text/javascript">
