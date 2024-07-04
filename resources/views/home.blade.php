@@ -54,7 +54,7 @@
                 </thead>
                 <tr>
                     <td width="153" valign="top">山西省</a></td>
-                    <td width="153" valign="top"><a href="allvillpro.php?proid=140000">96</a></td>
+                    <td width="153" valign="top"><a href=" {{ route('villages.index', ['province_id' => 140000]) }}">96</a></td>
                     <td width="153" valign="top"><a href="alltownpro.php?proid=140000">15</td>
                     <td width="153" valign="top">111</td>
                 </tr>
