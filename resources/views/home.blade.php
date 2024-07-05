@@ -7,6 +7,7 @@
 </style>
 @endpush
 @section('content')
+<meta name="csrf-token" content="{{ csrf_token() }}">
 <div class="image-container">
     <img src="{{ asset('images/home.png') }}" class="img-fluid full-screen-img " alt="Your Image">
     <div class="overlay">
@@ -294,7 +295,7 @@ $.ajax({
                 dataPhoto.longitude
             );
             //bookmark
-            infoContent += `<button id = "bookmark" name="bookmark" class="icon" style="background-color:white; border-color:white;" onclick="myBookmark(\'${dataPhoto.id}\')"><i class="fas fa-bookmark"></i><span class="tooltiptext"></span></button></span></p>`;
+            infoContent += `<button id = "bookmark" name="bookmark" class="icon" style="background-color:white; border-color:white;" onclick="myBookmark('${dataPhoto.id}')"><i class="fas fa-bookmark"></i><span class="tooltiptext"></span></button></span></p>`;
 
             //share social & embeded
             infoContent += '<button onclick="share(' + dataPhoto.latitude + ',' + dataPhoto.longitude + ')">Share</button>';
@@ -507,31 +508,40 @@ $.ajax({
         }
         }
 
-        // bookmark function
-        // function myBookmark(longname, baidu, latitude, longitude) {
-        // var login = "";
-        // if (login == "true") {
-        //     var bookmarkList = [longname, baidu, latitude, longitude];
-        //     $.ajax({
-        //     url: 'backend/insertbookmark.php',
-        //     type: "POST",
-        //     data: {
-        //         'bookmarkList': bookmarkList
-        //     },
-        //     dataType: 'json',
-        //     success: function(data) {
-        //         alert(data.message);
-        //     }
-        //     });
-        // } else {
-        //     loginBookmark();
-        // }
-        // }
+        //bookmark function
+        var isUserLoggedIn = "{{ Auth::check() ? 'true' : 'false' }}";
+        function myBookmark(id) {
+            if (isUserLoggedIn == "true") {
+                var location_id = id;
+                $.ajax({
+                    url: '/bookmark',
+                    type: "POST",
+                    data: {
+                        'location_id': location_id,
+                        '_token': $('meta[name="csrf-token"]').attr('content')
+                    },
+                    dataType: 'json',
+                    success: function(data) {
+                        alert(data.message);
+                    },
+                    error: function(jqXHR) {
+                        console.log(jqXHR); 
+                        if (jqXHR.status == 403) {
+                            loginBookmark();
+                        } else {
+                            alert('An error occurred while saving the bookmark.');
+                        }
+                    }
+                });
+            } else {
+                loginBookmark();
+            }
+        }
 
-        // function loginBookmark() {
-        // alert('Please login to access bookmark feature.');
-        // window.location = "login.php";
-        // }
+        function loginBookmark() {
+            alert('Please login to access bookmark feature.');
+            window.location = "{{ route('login') }}";
+        }
 </script>
 
 <script src="{{ asset('js/oldvillage.js') }}"></script>
