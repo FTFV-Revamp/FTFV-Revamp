@@ -59,8 +59,9 @@ header ul li {
     display: flex;
     gap: 1%;
 }
-
-
+.menu-header li:first-child{
+    margin-top: -8px;
+}
 
 .three {
     width: 30%;
@@ -80,6 +81,7 @@ header ul li {
 }
 
 .auth-menu li {
+    margin-top: 8px;
     margin-right: 0;
     /* Khoảng cách giữa các thẻ li */
 }

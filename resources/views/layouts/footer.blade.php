@@ -12,9 +12,9 @@
         <div class="content-footer2">
             <ul>
                 <li>Links</li>
-                <li><a href="">Home</a></li>
+                <li><a href="{{route('home')}}">Home</a></li>
                 <li><a href="">About</a></li>
-                <li><a href="">Bookmark</a></li>
+                <li><a href="{{route('favourite')}}">Bookmark</a></li>
                 <li><a href="">Contact</a></li>
             </ul>
             <ul>
