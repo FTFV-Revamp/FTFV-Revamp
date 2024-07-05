@@ -23,8 +23,17 @@ class FavouriteController extends Controller
             'location_id' => 'required|integer',
         ]);
 
+        $user_id = Auth::id();
+
+        $existingBookmark = Bookmark::where('user_id', $user_id)
+                                    ->where('location_id', $request->location_id)
+                                    ->first();
+
+        if ($existingBookmark) {
+            return response()->json(['message' => 'You have already bookmarked this location.']);
+        }
+
         try {
-            $user_id = Auth::id();
             $bookmark = new Bookmark();
             $bookmark->user_id = $user_id;
             $bookmark->location_id = $request->location_id;
@@ -36,6 +45,7 @@ class FavouriteController extends Controller
             return response()->json(['error' => 'Failed to save bookmark. Please try again later.'], 500);
         }
     }
+
     public function favourite(){
         $user_id = Auth::user()->id;
         $favourites = Bookmark::where('user_id', $user_id)->with('location')->paginate(3);
