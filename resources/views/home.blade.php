@@ -2,9 +2,6 @@
 
 @push('style')
 <link rel="stylesheet" href="{{ asset('css/home.css') }}">
-<style>
-
-</style>
 @endpush
 @section('content')
 <meta name="csrf-token" content="{{ csrf_token() }}">
@@ -264,77 +261,77 @@
     //Code to load the map with center point of Monterey MA
     function initialize() {
 
-$.ajax({
-    method: "GET",
-    url: "{{ route('locations') }}",
-    // dataType: "json",
-    success: function (response) {
-        var center = new google.maps.LatLng(40.001517, 115.652531);
+        $.ajax({
+        method: "GET",
+        url: "{{ route('locations') }}",
+        // dataType: "json",
+        success: function (response) {
+            var center = new google.maps.LatLng(40.001517, 115.652531);
 
-        var map = new google.maps.Map(document.getElementById("map"), {
-            zoom: 3,
-            center: center,
-            gestureHandling: 'greedy',
-            mapTypeId: google.maps.MapTypeId.ROADMAP
-        });
-        var imagePath = "https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m";
-
-        var markers = [];
-
-        let locations = (response.locations);
-        // console.log(locations);
-        for (var i = 0; i < locations.length; i++) {
-            var dataPhoto = locations[i];
-
-            //add all info into infocontent and display in infoWindow
-            var infoContent = '<strong>' + dataPhoto.longname + '</strong>';
-            infoContent += '<p>' + '<a href="' + dataPhoto.baidu + '" target="_blank">' + dataPhoto.baidu + '</a>' + '</p>';
-
-            var latLng = new google.maps.LatLng(
-                dataPhoto.latitude,
-                dataPhoto.longitude
-            );
-            //bookmark
-            infoContent += `<button id = "bookmark" name="bookmark" class="icon" style="background-color:white; border-color:white;" onclick="myBookmark('${dataPhoto.id}')"><i class="fas fa-bookmark"></i><span class="tooltiptext"></span></button></span></p>`;
-
-            //share social & embeded
-            infoContent += '<button onclick="share(' + dataPhoto.latitude + ',' + dataPhoto.longitude + ')">Share</button>';
-
-            var marker = new google.maps.Marker({
-                position: latLng,
+            var map = new google.maps.Map(document.getElementById("map"), {
+                zoom: 3,
+                center: center,
+                gestureHandling: 'greedy',
+                mapTypeId: google.maps.MapTypeId.ROADMAP
             });
-            markers.push(addMarker(marker));
-        }
+            var imagePath = "https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m";
 
-        function addMarker(dataPhoto) {
-            var marker = new google.maps.Marker({
-                position: latLng,
-                map: map,
+            var markers = [];
+
+            let locations = (response.locations);
+            // console.log(locations);
+            for (var i = 0; i < locations.length; i++) {
+                var dataPhoto = locations[i];
+
+                //add all info into infocontent and display in infoWindow
+                var infoContent = '<strong>' + dataPhoto.longname + '</strong>';
+                infoContent += '<p>' + '<a href="' + dataPhoto.baidu + '" target="_blank">' + dataPhoto.baidu + '</a>' + '</p>';
+
+                var latLng = new google.maps.LatLng(
+                    dataPhoto.latitude,
+                    dataPhoto.longitude
+                );
+                //bookmark
+                infoContent += `<button id = "bookmark" name="bookmark" class="icon" style="background-color:white; border-color:white;" onclick="myBookmark('${dataPhoto.id}')"><i class="fas fa-bookmark"></i><span class="tooltiptext"></span></button></span></p>`;
+
+                //share social & embeded
+                infoContent += '<button onclick="share(' + dataPhoto.latitude + ',' + dataPhoto.longitude + ')">Share</button>';
+
+                var marker = new google.maps.Marker({
+                    position: latLng,
+                });
+                markers.push(addMarker(marker));
+            }
+
+            function addMarker(dataPhoto) {
+                var marker = new google.maps.Marker({
+                    position: latLng,
+                    map: map,
+                });
+
+                /*if(props.iconImage){
+                marker.setIcon(props.iconImage);
+                } */
+
+                //Check content
+                if (infoContent) {
+                    var infoWindow = new google.maps.InfoWindow({
+                        content: infoContent
+                    });
+                    marker.addListener('click', function() {
+                        infoWindow.open(map, marker);
+                    });
+                }
+                return marker;
+            }
+
+            var markerCluster = new MarkerClusterer(map, markers, {
+                imagePath: imagePath
+            });
+                }
             });
 
-            /*if(props.iconImage){
-            marker.setIcon(props.iconImage);
-            } */
-
-            //Check content
-            if (infoContent) {
-                var infoWindow = new google.maps.InfoWindow({
-                    content: infoContent
-                });
-                marker.addListener('click', function() {
-                    infoWindow.open(map, marker);
-                });
-            }
-            return marker;
-        }
-
-        var markerCluster = new MarkerClusterer(map, markers, {
-            imagePath: imagePath
-        });
-            }
-        });
-
-}
+    }
     google.maps.event.addDomListener(window, "load", initialize);
 </script>
 <script type="text/javascript">
@@ -428,8 +425,7 @@ $.ajax({
         function shareWholeMap() {
             singleLocation = false;
             allLocation = true;
-            // url = "https://chinaetravel.com/ftfv/map.php";
-            url = "demo";
+            url = "{{ route('loadWholeMap') }}";
 
             popup.classList.toggle("show");
             blur.classList.toggle('active');
@@ -446,7 +442,7 @@ $.ajax({
         if (singleLocation) {
             url = "https://www.facebook.com/sharer.php?u=https://www.google.com/maps/search/?q=" + latitude + "," + longitude;
         } else if (allLocation) {
-            url = "https://www.facebook.com/sharer.php?u=https://chinaetravel.com/china-project/ftfv/map.php";
+            url = "https://www.facebook.com/sharer.php?u={{ route('loadWholeMap') }}";
         }
         window.open(url, '_blank');
         }
@@ -456,7 +452,7 @@ $.ajax({
             url = "https%3A%2F%2Fwww.google.com%2Fmaps%2Fsearch%2F%3Fapi%3D1%26query%3D" + latitude + "%252C" + longitude;
             // var message = "Check this location out!!!" + url;
         } else if (allLocation) {
-            url = "https%3A%2F%2Fchinaetravel.com%2Fchina-project%2Fftfv%2Fmap.php";
+            url = encodeURIComponent("{{ route('loadWholeMap') }}");
         }
         //mobile version
         window.location.href = 'whatsapp://send?text=' + url;
@@ -469,7 +465,7 @@ $.ajax({
         if (singleLocation) {
             var igurl = "https://www.google.com/maps/search/?q=" + latitude + "," + longitude;
         } else if (allLocation) {
-            var igurl = "https://chinaetravel.com/china-project/ftfv/map.php";
+            var igurl = "{{ route('loadWholeMap') }}";
         }
         navigator.clipboard.writeText(igurl)
             .then(() => {
@@ -525,7 +521,7 @@ $.ajax({
                         alert(data.message);
                     },
                     error: function(jqXHR) {
-                        console.log(jqXHR); 
+                        console.log(jqXHR);
                         if (jqXHR.status == 403) {
                             loginBookmark();
                         } else {
@@ -544,5 +540,5 @@ $.ajax({
         }
 </script>
 
-<script src="{{ asset('js/oldvillage.js') }}"></script>
+{{-- <script src="{{ asset('js/oldvillage.js') }}"></script> --}}
 @endpush

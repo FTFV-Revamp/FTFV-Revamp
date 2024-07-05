@@ -51,6 +51,8 @@ Route::get('villages/{province_id}/oldvillages/{id}', [VillageController::class,
 Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
 
 
+Route::get('/map', [HomeController::class, 'loadWholeMap'])
+->name('loadWholeMap');
 
 Route::get('towns/{province_id}', [TownController::class, 'index'])->name('towns.index');
 Route::get('towns/{province_id}/townvillages/{id}', [TownController::class, 'detail'])->name('towns.detail');

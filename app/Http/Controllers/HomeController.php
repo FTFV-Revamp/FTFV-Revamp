@@ -32,4 +32,8 @@ class HomeController extends Controller
 
         return response()->json(compact('locations'));
     }
+
+    public function loadWholeMap()  {
+        return view('map');
+    }
 }
