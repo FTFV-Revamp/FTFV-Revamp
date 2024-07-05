@@ -14,7 +14,7 @@ class Bookmark extends Model
         'location_id',
         'created_at',
     ];
-    public $timestamps = true;
+    public $timestamps = false;
     public function location()
     {
         return $this->belongsTo(Location::class, 'location_id');
