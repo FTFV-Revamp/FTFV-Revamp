@@ -3,9 +3,9 @@
 @section('content')
 <div class="container mt-4">
     <div class="d-flex justify-content-start mb-3">
-        <a href="{{ route('home') }}" class="btn btn-secondary">
+        <button onclick="goBack()" class="btn btn-secondary">
             <i class="fas fa-backward"></i> Back
-        </a>
+        </button>
     </div>
     <div class="card">
             <div class="table-responsive">
@@ -28,4 +28,9 @@
             </div>
     </div>
 </div>
+<script>
+    function goBack() {
+        window.history.back();
+    }
+</script>
 @endsection

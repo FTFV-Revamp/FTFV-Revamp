@@ -10,10 +10,10 @@
 
       <div class="w3-twothird w3-container">
         <div class="d-flex justify-content-start mb-3">
-            <a href="{{ url()->previous() }}" class="btn btn-secondary">
-                <i class="fas fa-backward"></i> Back
-            </a>
-        </div>
+          <button onclick="goBack()" class="btn btn-secondary">
+              <i class="fas fa-backward"></i> Back
+          </button>
+      </div>
         <h2>{{ $village->longname }}</h2>
         <p><a href="{{ $village->baidu }}" target="_blank">Baidu</a></p>
 
@@ -46,5 +46,15 @@
         <p>
       </div>
     </div>
-
+    
+<script>
+      function goBack() {
+          window.history.back();
+          setTimeout(function() {
+              if (document.referrer === "") { 
+                  window.location.href = document.referrer || '/';
+              }
+          }, 500); 
+      }
+  </script>
 @endsection

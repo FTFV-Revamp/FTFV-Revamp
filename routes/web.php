@@ -3,6 +3,7 @@
 use App\Http\Controllers\Auth\VerificationController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\VillageController;
+use App\Http\Controllers\TownController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\FavouriteController;
@@ -51,4 +52,5 @@ Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
 
 
 
-Route::get('/towns/{province_id}', fn() => 1)->name('towns.index');
+Route::get('towns/{province_id}', [TownController::class, 'index'])->name('towns.index');
+Route::get('towns/{province_id}/townvillages/{id}', [TownController::class, 'detail'])->name('towns.detail');
