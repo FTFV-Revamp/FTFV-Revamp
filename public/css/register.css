@@ -1,0 +1,38 @@
+.register-header {
+    font-size: 2rem;
+    font-weight: 900;
+}
+.register-paragraph {
+    font-size: 1rem;
+    color: #A4A9B2;
+}
+.btn-register {
+    background-color: #010E51;
+    border-color: #010E51;
+    color: white;
+    width: 100%;
+}
+.btn-register:hover {
+    background-color: #3967C2;
+    border-color: #3967C2;
+    color: white;
+}
+.container-register {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-top: 60px;
+    margin-bottom: 100px;
+}
+.invalid-feedback {
+    display: none;
+    width: 100%;
+    margin-top: 0.25rem;
+    font-size: 0.875em;
+    color: var(--bs-form-invalid-color);
+}
+
+.is-invalid ~ .invalid-feedback {
+    display: block;
+}
