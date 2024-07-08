@@ -123,6 +123,25 @@
     color: white;
     border-color: #010E51;
 }
+@media only screen and (max-width: 600px) {
+    .favourite-list {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .favourite-item {
+        width: 80%;
+        height: auto;
+    }
+
+    .favourite-item img {
+        height: auto;
+    }
+
+    .favourite-item h2, .favourite-item p {
+        font-size: 100%;
+    }
+}
 
 
 
