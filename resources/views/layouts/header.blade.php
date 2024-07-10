@@ -12,7 +12,7 @@
                 <li><a href="{{route('home')}}">Home</a></li>
                 <li><a href="">About</a></li>
                 <li><a href="{{route('favourite')}}">Bookmark</a></li>
-                <li><a href="">Contact</a></li>    
+                <li><a href="{{route('contact')}}">Contact</a></li>
                 @if(!empty(Auth::user()->id))
                     <li>
                         <a href="{{ route('logout') }}"
@@ -38,7 +38,7 @@
                     <li><a href="{{route('home')}}">Home</a></li>
                     <li><a href="">About</a></li>
                     <li><a href="{{route('favourite')}}">Bookmark</a></li>
-                    <li><a href="">Contact</a></li>
+                    <li><a href="{{route('contact')}}">Contact</a></li>
                 </ul>
             </div>
         </div>
@@ -46,7 +46,7 @@
             <ul class="auth-menu">
                 @if(!empty(Auth::user()->id))
                     <li><a href="">{{Auth::user()->username}}</a></li>
-                    <li><span class="vertical-line"></span></li> 
+                    <li><span class="vertical-line"></span></li>
                     <li>
                         <a href="{{ route('logout') }}"
                         onclick="event.preventDefault();
@@ -59,7 +59,7 @@
                     </form>
                 @else
                     <li><a href="{{ route('login') }}">Login</a></li>
-                    <li><span class="vertical-line"></span></li> 
+                    <li><span class="vertical-line"></span></li>
                     <li><a href="{{ route('register') }}">Register</a></li>
                 @endif
             </ul>
