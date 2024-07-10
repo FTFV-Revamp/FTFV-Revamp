@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\FavouriteController;
 use App\Http\Controllers\Auth\LoginController;
+use App\Http\Controllers\ContactController;
 
 /*
 |--------------------------------------------------------------------------
@@ -56,3 +57,6 @@ Route::get('/map', [HomeController::class, 'loadWholeMap'])
 
 Route::get('towns/{province_id}', [TownController::class, 'index'])->name('towns.index');
 Route::get('towns/{province_id}/townvillages/{id}', [TownController::class, 'detail'])->name('towns.detail');
+
+Route::get('contact', [ContactController::class, 'index'])->name('contact');
+Route::post('postContact', [ContactController::class, 'postContact'])->name('post-contact');
