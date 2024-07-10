@@ -48,7 +48,7 @@ class FavouriteController extends Controller
 
     public function favourite(){
         $user_id = Auth::user()->id;
-        $favourites = Bookmark::where('user_id', $user_id)->with('location')->paginate(3);
+        $favourites = Bookmark::where('user_id', $user_id)->with('location')->paginate(6);
         return view('favourite', compact('favourites'));
     }
 

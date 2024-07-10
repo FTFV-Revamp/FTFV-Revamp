@@ -27,9 +27,9 @@
         <div class="content-footer3">
             <ul>
                 <li>Newsletter</li>
-                <li style="display: flex;">
+                <li class="responsiveft" style="display: flex;">
                     <input type="text" class="no-border" placeholder="Enter Your Email Address">
-                    <button>SUBSCRIBE</button>
+                    <button class="butoon-sub"><span class="subs">SUBSCRIBE</span></button>
                 </li>
             </ul>
         </div>
