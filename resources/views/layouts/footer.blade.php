@@ -15,7 +15,7 @@
                 <li><a href="{{route('home')}}">Home</a></li>
                 <li><a href="">About</a></li>
                 <li><a href="{{route('favourite')}}">Bookmark</a></li>
-                <li><a href="">Contact</a></li>
+                <li><a href="{{route('contact')}}">Contact</a></li>
             </ul>
             <ul>
                 <li>Help</li>
