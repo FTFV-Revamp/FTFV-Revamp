@@ -18,7 +18,7 @@
     align-items: center;
     color: #262F3D;
     margin-top: 50px;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
     font-weight: bold;
 }
 
@@ -37,8 +37,7 @@
     overflow: hidden;
     width: 293px;
     height: 377px;
-    margin: 50px;
-    margin-bottom: 20px;
+    margin: 80px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
@@ -91,7 +90,7 @@
 .paginationbookmark {
     display: flex;
     justify-content: center;
-    margin-top: 50px;
+    margin-top: 20px;
 }
 
 .paginationbookmark .page-item {
