@@ -12,10 +12,11 @@
         <div class="content-footer2">
             <ul>
                 <li>Links</li>
-                <li><a href="{{route('home')}}">Home</a></li>
-                <li><a href="">About</a></li>
-                <li><a href="{{route('favourite')}}">Bookmark</a></li>
-                <li><a href="{{route('contact')}}">Contact</a></li>
+                <li><a href="{{route('home')}}" class="{{ request()->routeIs('home') ? 'active' : '' }}">Home</a></li>
+                <li><a href="" class="{{ request()->routeIs('about.index') ? 'active' : '' }}">About</a></li>
+                <li><a href="{{route('favourite')}}" class="{{ request()->routeIs('favourite') ? 'active' : '' }}">Bookmark</a></li>
+                <li><a href="{{route('contact')}}" class="{{ request()->routeIs('contact') ? 'active' : '' }}">Contact</a></li>
+
             </ul>
             <ul>
                 <li>Help</li>
