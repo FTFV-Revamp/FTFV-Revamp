@@ -16,6 +16,7 @@
                 <li><a href="" class="{{ request()->routeIs('about.index') ? 'active' : '' }}">About</a></li>
                 <li><a href="{{route('favourite')}}" class="{{ request()->routeIs('favourite') ? 'active' : '' }}">Bookmark</a></li>
                 <li><a href="{{route('contact')}}" class="{{ request()->routeIs('contact') ? 'active' : '' }}">Contact</a></li>
+
             </ul>
             <ul>
                 <li>Help</li>

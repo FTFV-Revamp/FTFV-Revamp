@@ -5,7 +5,6 @@
     font-family: Arial, Helvetica, sans-serif;
     list-style: none;
     text-decoration: none;
-
 }
 
 header {
@@ -447,8 +446,8 @@ button {
     }
 }
 
-/* @media only screen and (max-width: 1145px) {
 
+/* @media only screen and (max-width: 1145px) {
     .responsiveft {
         display: flex;
         flex-direction: column;
