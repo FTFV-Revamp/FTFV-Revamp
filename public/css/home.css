@@ -209,34 +209,48 @@ h6 {
 
 .image-container {
         position: relative;
-        max-width: 100%; /* Ensure the container does not overflow */
+        width: 100%;
+        max-width: 100%;
+        height: auto;
+        overflow: hidden;
     }
+
+    .image-container img {
+        width: 100%;
+        height: auto;
+        display: block;
+    }
+
     .overlay {
-        padding: 25px;
+        padding: 50px;
         background-color: #FCF2D8;
         position: absolute;
         top: 20%;
         left: 5%;
-        width: 90%; /* Adjust to be more flexible */
-        max-width: 30%;
-        height: auto; /* Let height adjust automatically */
-        border-radius: 1%;
+        width: 90%;
+        max-width: 40%;
+        height: auto;
+        border-radius: 5%;
         box-sizing: border-box;
     }
 
     .overlay h2 {
         font-weight: 700;
         color: #D9A283;
-
+        font-size: 2em;
+        margin: 0;
     }
 
     .overlay .btn-readmore {
         background-color: #D9A283;
         color: white;
         border: none;
-        padding: 10px 20px;
+        font-weight: 700;
         text-transform: uppercase;
         cursor: pointer;
+        font-size: 0.75em;
+        padding: 15px 35px;
+
     }
 
     .shareBtn {
@@ -256,41 +270,121 @@ h6 {
         object-fit: cover;
     }
 
+    #map {
+        width: 80%;
+        height: 600px;
+        margin-left: auto;
+        margin-right: auto;
+        transition: all 0.3s ease;
+    }
 
     /* Responsive adjustments */
 @media (max-width: 1200px) {
-    .overlay {
+    /* .overlay {
         top: 15%;
         left: 5%;
         width: 40%;
         max-width: none;
+    } */
+
+    .overlay h2 {
+        font-size: 2.5em;
+    }
+
+    .overlay h4 {
+        font-size: 1.7em;
+    }
+
+    .btn-readmore {
+        font-size: 1.2em;
+        padding: 12px 24px;
+    }
+
+    #map {
+        width: 80%;
+        height: 500px;
     }
 }
 
 @media (max-width: 992px) {
-    .overlay {
+    /* .overlay {
         top: 10%;
         left: 5%;
         width: 50%;
         max-width: none;
+    } */
+
+    .overlay h2 {
+        font-size: 2.25em;
+    }
+
+    .overlay h4 {
+        font-size: 1.6em;
+    }
+
+    .btn-readmore {
+        font-size: 1.1em;
+        padding: 11px 22px;
+    }
+
+    #map {
+        width: 80%;
+        height: 450px;
     }
 }
 
 @media (max-width: 768px) {
     .overlay {
-        top: 5%;
+        top: 15%;
         left: 5%;
-        width: 60%;
-        max-width: none;
+        max-width: 45%;
+        padding: 32px;
+    }
+
+    .overlay h2 {
+        font-size: 1.5em;
+    }
+
+    .overlay h4 {
+        font-size: 1.1em;
+    }
+
+    .overlay .btn-readmore {
+        font-size: .8em;
+        padding: 8px 16px;
+    }
+
+    #map {
+        width: 85%;
+        height: 400px;
     }
 }
 
-@media (max-width: 576px) {
+@media (max-width: 600px) {
     .overlay {
-        top: 5%;
+        top: 10%;
         left: 5%;
         width: 80%;
-        max-width: none;
+        padding: 12px;
+
+    }
+
+    .overlay h2 {
+        font-size: 1.25em;
+    }
+
+    .overlay h4 {
+        font-size: 1em;
+    }
+
+    .overlay .btn-readmore {
+        font-size: 0.6em;
+        padding: 8px 12px;
+    }
+
+    #map {
+        width: 90%;
+        height: 350px;
     }
 }
 
@@ -299,18 +393,74 @@ h6 {
         top: 5%;
         left: 2.5%;
         width: 95%;
-        padding: 15px; /* Reduce padding for smaller screens */
+        padding: 8px;
     }
 
     .overlay h2 {
-        font-size: 1.5em; /* Adjust font size for smaller screens */
+        font-size: .5em;
     }
 
-    .overlay p {
-        font-size: 1em; /* Adjust font size for smaller screens */
+    .overlay h4 {
+        font-size: .5em;
     }
 
     .overlay .btn-readmore {
-        padding: 8px 16px; /* Adjust button padding for smaller screens */
+        font-size: 0.5em;
+        padding: 4px 8px;
+    }
+
+    .shareBtn {
+        width: 90%;
+        font-size: 16px;
+    }
+
+    #map {
+        width: 95%;
+        height: 300px;
+    }
+}
+
+@media (max-width: 425px) {
+    .overlay {
+        top: 15%;
+        left: 5%;
+        width: 95%;
+        padding: 8px;
+    }
+
+    .overlay h2 {
+        font-size: .5em;
+        margin-bottom: .5em;
+    }
+
+    .overlay h4 {
+        font-size: .5em;
+    }
+
+    .overlay .btn-readmore {
+        font-size: .4em;
+        padding: 6px 12px;
+    }
+
+}
+
+@media (max-width: 320px) {
+    .overlay {
+        top: 10%;
+        left: 5%;
+        width: 90%;
+    }
+
+    .overlay h2 {
+        font-size: .5em;
+    }
+
+    .overlay h4 {
+        font-size: .5em;
+    }
+
+    .overlay .btn-readmore {
+        font-size: .3em;
+        padding: 8px 16px;
     }
 }
