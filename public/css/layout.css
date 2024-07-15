@@ -15,6 +15,9 @@ header {
     width: 100%;
     height: 100%;
 }
+.active {
+    font-weight: bold !important;
+}
 
 header a {
     color: white;
@@ -37,8 +40,6 @@ header ul li {
     display: flex;
     justify-content: space-between;
 }
-
-
 
 .one-two {
     width: 100%;
@@ -182,25 +183,31 @@ footer {
 }
 
 .container-footer {
-    max-width: 1267px;
+    max-width: 1366px;
     width: 100%;
     display: flex;
-    padding-left: 7%;
-    gap: 10%;
+    padding-left: 5%;
+    gap: 5%;
 }
 
 .content-footer1 {
-    width: 48%;
+    width: 25%;
     margin-top: 50px;
 }
-
+.content-footer2{
+    width: 25%;
+    display: flex;
+    gap: 20%;
+    margin-top: 50px;
+    margin-right: 5%;
+}
 
 .content-footer2 ul {
     margin-right: 12%;
 }
 
 .content-footer3 {
-    width: 51%;
+    width: 25%;
     margin-top: 50px;
 }
 
@@ -218,13 +225,6 @@ a {
     color: #000;
 }
 
-.content-footer2 {
-    width: 47%;
-    display: flex;
-    gap: 30%;
-    margin-right: 5%;
-    margin-top: 50px;
-}
 
 .ftfv {
     font-size: 23px;
@@ -276,6 +276,7 @@ footer {
 }
 
 .content-footer3 ul li:first-child {
+    font-weight: bold;
     color: rgba(192, 192, 192);
 }
 
@@ -419,6 +420,10 @@ button {
         margin-top: 20px;
     }
 
+    .content-footer3{
+        width: 170px;
+    }
+
     .content-footer3 ul {
         margin-top: 20px;
     }
@@ -433,14 +438,16 @@ button {
     }
 
     .no-border {
-        width: 62%;
+        width: 100%;
+        font-size: 100%;
     }
     button{
-        width: 50%;
+        width: 60%;
+        font-size: 90%;
     }
 }
 
-@media only screen and (max-width: 1260px) {
+/* @media only screen and (max-width: 1145px) {
 
     .responsiveft {
         display: flex;
@@ -471,4 +478,4 @@ button {
         text-decoration: none;
     
     }
-}
+} */
