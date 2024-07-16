@@ -16,7 +16,7 @@
                                 information about these unique and culturally rich destinations across China.</p>
                         </div>
                     </div>
-                    <button class="button-about">Learn More</button>
+                    <button class="button">Learn More</button>
                 </div>
                 <div class="col-lg-6">
                     <div class="device-wrapper">

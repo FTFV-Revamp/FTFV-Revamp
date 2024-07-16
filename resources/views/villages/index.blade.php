@@ -3,7 +3,7 @@
 @section('content')
 <div class="container mt-4">
     <div class="d-flex justify-content-start mb-3">
-        <button style="width: unset" onclick="goBack()" class="btn btn-secondary">
+        <button onclick="goBack()" class="btn btn-secondary">
             <i class="fas fa-backward"></i> Back
         </button>
     </div>
