@@ -52,7 +52,8 @@ body {
   object-fit: cover;
 }
 
-.button {
+.button-about {
+  width: unset;
   background: #0056b3;
   color: white;
   border: none;
@@ -146,16 +147,19 @@ body {
   margin-top: 20px;
   margin-bottom: 50px;
 }
-.col-lg-5 {
-  margin-left: 30px;  /* Thay 10px bằng giá trị bạn muốn */
-  margin-right: 10px; /* Thay 10px bằng giá trị bạn muốn */
-}
+/* .col-lg-5 {
+  margin-left: 30px; 
+  margin-right: 10px;
+} */
 @media (max-width: 1300px) {
   .content-title {
     font-size: 20px;
   }
   .lead {
     font-size: 18px;
+  }
+  .container{
+    justify-content: center;
   }
 }
 @media (max-width: 991px) {
@@ -183,5 +187,8 @@ body {
 @media screen and (max-width: 650px) {
   .about-section {
     padding: 30px 15px;
+  }
+  .container{
+    justify-content: center;
   }
 }
