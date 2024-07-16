@@ -307,19 +307,23 @@ button {
     font-weight: bold;
 }
 
+
 .footer2 {
-    margin-top: 45px;
     width: 100%;
+    margin-top: 50px;
 }
+
 .footer2 hr{
     width: 90%;
-    margin: auto;
+    margin-left: 5%;
+    margin-right: 5%;
 }
 
 .footer2 h5 {
     margin-top: 15px;
     margin-bottom: 15px;
     margin-left: 5%;
+    font-size: 100%;
 }
 
 .popup {
@@ -378,8 +382,8 @@ button {
 
     .hamburger-menu {
         display: flex;
-        margin-top: 5px;
-        margin-left: 40px;
+        margin-top: 13px;
+        margin-left: 6%;
     }
 
     .three {
@@ -399,9 +403,10 @@ button {
 
     .close-menu2 {
         display: block;
-        margin-left: 70%;
-        font-size: 190%;
+        margin-left: 80%;
+        font-size: 170%;
         font-weight: bold;
+        margin-top: 8px;
     }
 
     .no-border::placeholder {

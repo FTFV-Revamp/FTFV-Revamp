@@ -44,7 +44,7 @@
 
 .favourite-item img {
     width: 100%;
-    height: 70%;
+    height: 68%;
 }
 
 .favourite-item-content {
@@ -145,7 +145,7 @@
     }
 
     .favourite-item img {
-        height: 70%;
+        height: 68%;
     }
 
     .favourite-item h2, .favourite-item p {
@@ -155,6 +155,18 @@
         display: flex;
         justify-content: center;
         margin: 30px;
+    }
+}
+@media only screen and (max-width: 450px) {
+    .favourite-item {
+        width: 240px;
+        height: 325px;
+    }
+    .favourite-item img {
+        height: 68%;
+    }
+    .favourite-item h2, .favourite-item p {
+        font-size: 80%;
     }
 }
 
