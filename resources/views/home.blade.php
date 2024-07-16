@@ -8,9 +8,10 @@
 <div class="image-container">
     <img src="{{ asset('images/home.png') }}" class="img-fluid full-screen-img " alt="Your Image">
     <div class="overlay">
-        <h2>中国历史文化名镇名村</h2>
-        <h4 class="mt-3">Chinese famous towns & villages in history & culture</h4>
-        <a href="" class="btn btn-readmore mt-3">READ MORE</a>
+        <h2>中国历</h2>
+        <h2>史文化名镇名村</h2>
+        <h4 class="mt-1">Chinese famous towns & villages in history & culture</h4>
+        <a href="" class="btn btn-readmore mt-1">READ MORE</a>
     </div>
 </div>
 <div class="container-fluid">
@@ -26,7 +27,7 @@
                 </div>
 
                 <!-- the div which will display map with pointers -->
-                <div id="map" style="width: 80%; height: 600px; margin-left: auto; margin-right: auto;"></div>
+                <div id="map"></div>
 
             </div>
         </div>

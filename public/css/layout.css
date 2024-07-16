@@ -14,6 +14,9 @@ header {
     width: 100%;
     height: 100%;
 }
+.active {
+    font-weight: bold !important;
+}
 
 header a {
     color: white;
@@ -31,23 +34,19 @@ header ul li {
 }
 
 .container-header {
-
+    /* max-width: 1267px; */
+    width: 100%;
     display: flex;
     justify-content: space-between;
-
-
-}
-
-
-.one {
-    margin-top: 12px;
-    width: 30%;
-    margin-left: 50px;
 }
 
 .one-two {
+    width: 100%;
     display: flex;
-    gap: 19%;
+  
+}
+.two{
+    width: 60%;
 }
 
 .one a {
@@ -55,16 +54,22 @@ header ul li {
 }
 
 .menu-header {
+    margin-left: 15%;
     margin-top: 20px;
     display: flex;
-    gap: 1%;
+
 }
-.menu-header li:first-child{
-    margin-top: -8px;
+
+.menu-header li:first-child {
+    margin-top: -7px;
+}
+
+.menu-header li{
+    margin-right: 15%;
 }
 
 .three {
-    width: 30%;
+    width: 100%;
 }
 
 .three ul li a {
@@ -72,37 +77,33 @@ header ul li {
 }
 
 .auth-menu {
+    width: 100%;
     list-style: none;
     padding: 0;
-    margin: 13px;
     display: flex;
+    margin-top: 13px;
     align-items: center;
     justify-content: flex-end;
+    padding-right: 10%;
 }
 
 .auth-menu li {
-    margin-top: 8px;
+    margin-top: 7px;
     margin-right: 0;
-    /* Khoảng cách giữa các thẻ li */
 }
 
 .auth-menu li:last-child {
     margin-right: 0;
-    /* Bỏ khoảng cách bên phải của phần tử cuối cùng */
 }
 
 .vertical-line {
     width: 2px;
-    /* Chiều rộng của đường thẳng */
     height: 30px;
-    /* Chiều cao của đường thẳng, điều chỉnh theo nhu cầu */
     background-color: white;
-    /* Màu nền của đường thẳng */
 }
 
 body {
     font-family: Arial, sans-serif;
-    /* Đặt kiểu chữ Arial cho toàn bộ trang */
 }
 
 .hamburger-menu {
@@ -150,7 +151,8 @@ body {
     cursor: pointer;
     margin-bottom: 10px;
 }
-.close-menu2{
+
+.close-menu2 {
     display: none;
     font-size: 24px;
     color: white;
@@ -158,46 +160,70 @@ body {
     cursor: pointer;
     margin-bottom: 10px;
 }
-.menu-header li:first-child{
+
+.menu-header li:first-child {
     font-size: 20px;
     font-weight: bold;
     margin-right: 25%;
 }
+
 .vertical-line {
     display: inline-block;
     width: 1px;
     height: 20px;
-    background-color:white;
+    background-color: white;
     margin: 0 5px;
     vertical-align: middle;
 }
-footer{
+
+footer {
+    width: 100%;
     background-color: #FFFFFF;
 }
+
 .container-footer {
+    max-width: 1366px;
+    width: 100%;
     display: flex;
-    margin-left: 5%;
-    gap: 10%;
+    padding-left: 5%;
+    gap: 5%;
 }
-.content-footer1{
+
+.content-footer1 {
+    width: 25%;
     margin-top: 50px;
 }
 .content-footer2{
+    width: 25%;
+    display: flex;
+    gap: 20%;
+    margin-top: 50px;
+    margin-right: 5%;
+}
+
+.content-footer2 ul {
+    margin-right: 12%;
+}
+
+.content-footer3 {
+    width: 25%;
     margin-top: 50px;
 }
-.content-footer3{
-    margin-top: 50px;
+
+.responsiveft {
+    max-width: 247px;
+    width: 100%;
 }
+
+.no-border {
+    width: 49%;
+}
+
 a {
     text-decoration: none;
     color: #000;
 }
 
-.content-footer2 {
-    display: flex;
-    gap: 30%;
-    margin-right: 5%;
-}
 
 .ftfv {
     font-size: 23px;
@@ -212,16 +238,15 @@ li {
 footer {
     margin-top: 30px;
     font-family: Arial, sans-serif;
-    /* Đặt kiểu chữ Arial cho toàn bộ trang */
 }
 
 .content-footer2 ul li {
     margin-bottom: 35px;
     font-weight: bold;
-    /* Khoảng cách dưới giữa các thẻ li */
 }
 
 .content-footer3 ul li {
+    display: flex;
     margin-bottom: 35px;
 }
 
@@ -243,77 +268,89 @@ footer {
 
 .content-footer2 ul li:last-child {
     margin-bottom: 0;
-    /* Bỏ khoảng cách dưới của phần tử cuối cùng */
 }
 
 .content-footer2 ul li:first-child {
     color: rgba(192, 192, 192);
-    /* Màu trắng mờ cho thẻ li đầu tiên */
 }
 
 .content-footer3 ul li:first-child {
+    font-weight: bold;
     color: rgba(192, 192, 192);
-    /* Màu trắng mờ cho thẻ li đầu tiên */
+}
+
+.content-footer3 ul li:last-child {
+    width: 100%;
 }
 
 .no-border {
+    width: 180%;
+    height: auto;
     border: none;
-    /* Loại bỏ viền */
     outline: none;
-    /* Loại bỏ viền khi focus */
-    font-size: 16px;
-    /* Đặt kích thước chữ */
+    font-size: 100%;
     border-bottom: 1px solid black;
     margin-left: -2px;
-
     margin-right: 3%;
 }
 
 button {
+    width: 100%;
+    height: auto;
     border: none;
-    /* Loại bỏ viền */
     outline: none;
-    /* Loại bỏ viền khi focus */
-    font-size: 16px;
-    /* Đặt kích thước chữ */
+    font-size: 100%;
     background-color: transparent;
-    /* Loại bỏ màu nền */
     color: black;
-    /* Đặt màu chữ */
     cursor: pointer;
-    /* Con trỏ chuột khi di chuyển qua nút */
     border-bottom: 1px solid black;
     font-weight: bold;
 }
 
 .footer2 {
-    margin-top: 190px;
+    margin-top: 45px;
+    width: 100%;
+}
+.footer2 hr{
+    width: 90%;
+    margin: auto;
 }
 
 .footer2 h5 {
-    margin-top: 10px;
-    margin-bottom: 10px;
-    margin-left: 60px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    margin-left: 5%;
 }
 
 .popup {
     display: none;
 }
 
+
 @media only screen and (max-width: 600px) {
+    * {
+        margin: 0px;
+        padding: 0px;
+        box-sizing: border-box;
+        font-family: Arial, Helvetica, sans-serif;
+        list-style: none;
+        text-decoration: none;
+    
+    }
     header {
         width: 100%;
     }
 
     .container-header {
+        width: 100%;
         align-items: flex-start;
         gap: 25%;
     }
 
-    .one {
-        margin-left: 250px;
-        margin-bottom: 2px;
+    .one-two {
+        width: 80%;
     }
+
 
     .two {
         margin-left: 0;
@@ -359,14 +396,16 @@ button {
     .close-menu {
         display: block;
     }
+
     .close-menu2 {
         display: block;
-        margin-left: 200px;
-        font-size: 30px;
+        margin-left: 70%;
+        font-size: 190%;
         font-weight: bold;
     }
-    .no-border::placeholder  {
-        font-size: 12px;
+
+    .no-border::placeholder {
+        font-size: 90%;
     }
 
     .container-footer {
@@ -385,6 +424,10 @@ button {
         margin-top: 20px;
     }
 
+    .content-footer3{
+        width: 170px;
+    }
+
     .content-footer3 ul {
         margin-top: 20px;
     }
@@ -393,13 +436,50 @@ button {
         margin-bottom: 35px;
     }
 
-    .content-footer3 input[type="text"] {
-        width: 100%;
-        margin-bottom: 10px;
+    .responsiveft {
+        display: flex;
+        flex-direction: column;
     }
 
-    .content-footer3 button {
+    .no-border {
         width: 100%;
-        margin-bottom: 10px;
+        font-size: 100%;
+    }
+    button{
+        width: 60%;
+        font-size: 90%;
     }
 }
+
+
+/* @media only screen and (max-width: 1145px) {
+    .responsiveft {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+    .no-border {
+        width: 80%;
+    }
+    .no-border::placeholder{
+        text-align: center;
+        width: 100%;
+        font-size: 90%;
+    }
+    button{
+        width: 50%;
+    }
+    .subs{
+        width: 100%;
+        font-size: 90%;
+    }
+    * {
+        margin: 0px;
+        padding: 0px;
+        box-sizing: border-box;
+        font-family: Arial, Helvetica, sans-serif;
+        list-style: none;
+        text-decoration: none;
+    
+    }
+} */

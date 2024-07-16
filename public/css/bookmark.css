@@ -17,7 +17,8 @@
     justify-content: center;
     align-items: center;
     color: #262F3D;
-    margin-bottom: 50px;
+    margin-top: 50px;
+    margin-bottom: 10px;
     font-weight: bold;
 }
 
@@ -26,7 +27,6 @@
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
-    gap: 5%;
     width: 100%;
 }
 
@@ -35,10 +35,11 @@
     border: 1px solid #ccc;
     border-radius: 5px;
     overflow: hidden;
-    width: 25%;
-    height: 350px;
+    width: 293px;
+    height: 377px;
+    margin: 50px;
+    margin-bottom: 20px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    margin-bottom: 20px; 
 }
 
 .favourite-item img {
@@ -84,13 +85,13 @@
 }
 
 .icon-bookmark i {
-    font-size: 24px;
+    font-size: 24px;                                                                                                                                                                                                                                                                                                    
     color: #010E51;
 }
 .paginationbookmark {
     display: flex;
     justify-content: center;
-    margin-top: 20px;
+    margin-top: 50px;
 }
 
 .paginationbookmark .page-item {
@@ -124,22 +125,36 @@
     border-color: #010E51;
 }
 @media only screen and (max-width: 600px) {
+    .favourite h1 {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: #262F3D;
+        margin-top: 30px;
+        margin-bottom: 30px;
+        font-weight: bold;
+    }
     .favourite-list {
         flex-direction: column;
-        gap: 20px;
     }
 
     .favourite-item {
-        width: 80%;
-        height: auto;
+        width: 293px;
+        height: 377px;
+        margin: 5%;
     }
 
     .favourite-item img {
-        height: auto;
+        height: 70%;
     }
 
     .favourite-item h2, .favourite-item p {
         font-size: 100%;
+    }
+    .paginationbookmark {
+        display: flex;
+        justify-content: center;
+        margin: 30px;
     }
 }
 
