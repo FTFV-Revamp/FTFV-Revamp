@@ -4,6 +4,7 @@ use App\Http\Controllers\Auth\VerificationController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\VillageController;
 use App\Http\Controllers\TownController;
+use App\Http\Controllers\AboutController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\FavouriteController;
@@ -60,3 +61,5 @@ Route::get('towns/{province_id}/townvillages/{id}', [TownController::class, 'det
 
 Route::get('contact', [ContactController::class, 'index'])->name('contact');
 Route::post('postContact', [ContactController::class, 'postContact'])->name('post-contact');
+
+Route::get('/about', [AboutController::class, 'index'])->name('about.index');;
