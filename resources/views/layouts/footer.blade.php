@@ -13,7 +13,7 @@
             <ul>
                 <li>Links</li>
                 <li><a href="{{route('home')}}" class="{{ request()->routeIs('home') ? 'active' : '' }}">Home</a></li>
-                <li><a href="" class="{{ request()->routeIs('about.index') ? 'active' : '' }}">About</a></li>
+                <li><a href="{{route('about.index')}}" class="{{ request()->routeIs('about.index') ? 'active' : '' }}">About</a></li>
                 <li><a href="{{route('favourite')}}" class="{{ request()->routeIs('favourite') ? 'active' : '' }}">Bookmark</a></li>
                 <li><a href="{{route('contact')}}" class="{{ request()->routeIs('contact') ? 'active' : '' }}">Contact</a></li>
 
