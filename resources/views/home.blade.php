@@ -296,7 +296,7 @@
                 infoContent += `<button id = "bookmark" name="bookmark" class="icon" style="background-color:white; border-color:white;" onclick="myBookmark('${dataPhoto.id}')"><i class="fas fa-bookmark"></i><span class="tooltiptext"></span></button></span></p>`;
 
                 //share social & embeded
-                infoContent += '<button onclick="share(' + dataPhoto.latitude + ',' + dataPhoto.longitude + ')">Share</button>';
+                infoContent += '<button id="share" onclick="share(' + dataPhoto.latitude + ',' + dataPhoto.longitude + ')">Share</button>';
 
                 var marker = new google.maps.Marker({
                     position: latLng,

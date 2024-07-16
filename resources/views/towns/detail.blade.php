@@ -1,15 +1,15 @@
 @extends('layouts.app')
-
+@push('style')
+<link rel="stylesheet" href="{{ asset('css/oldvillage-detail.css') }}">
+@endpush
 @section('content')
 <div class="w3-overlay w3-hide-large" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
 
 <!-- Main content: shift it to the right by 250 pixels when the sidebar is visible -->
-<div class="w3-main" style="margin-left:250px">
-
+<div class="w3-main">
     <div class="w3-row w3-padding-64">
-
-        <div class="w3-twothird w3-container">
-            <div class="d-flex justify-content-start mb-3">
+        <div class="w3-container">
+            <div class="mb-3">
                 <button style="width: unset" onclick="goBack()" class="btn btn-secondary">
                     <i class="fas fa-backward"></i> Back
                 </button>
@@ -52,10 +52,10 @@
     function goBack() {
         window.history.back();
         setTimeout(function() {
-            if (document.referrer === "") { 
+            if (document.referrer === "") {
                 window.location.href = document.referrer || '/';
             }
-        }, 500); 
+        }, 500);
     }
 </script>
 @endsection
